@@ -117,7 +117,9 @@ interface TrainingType {
   status_label?: string;
 }
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
+//const API_BASE_URL = 'http://127.0.0.1:8000/api';
+const API_BASE_URL = 'https://manager-360.carexpresservices.com/api';
+const API_KEY = 'default-secret-key-2024';
 const PARENT_ID = 2;
 
 export default function InscriptionForm() {
@@ -133,7 +135,12 @@ export default function InscriptionForm() {
     const fetchTrainingTypes = async () => {
       try {
         // Essayer avec seulement parent_id (is_active peut être géré côté backend)
-        const response = await fetch(`${API_BASE_URL}/training-types?parent_id=${PARENT_ID}`);
+        const response = await fetch(`${API_BASE_URL}/training-types?parent_id=${PARENT_ID}`, {
+          headers: {
+            'X-API-Key': API_KEY,
+            'Accept': 'application/json',
+          },
+        });
         if (!response.ok) throw new Error('Erreur lors de la récupération des types de formation');
         const data = await response.json();
         console.log('Training types depuis API:', data.data || data);
@@ -153,7 +160,12 @@ export default function InscriptionForm() {
     setTrainingTypes([]);
     const fetchTrainingTypes = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/training-types?parent_id=${PARENT_ID}`);
+        const response = await fetch(`${API_BASE_URL}/training-types?parent_id=${PARENT_ID}`, {
+          headers: {
+            'X-API-Key': API_KEY,
+            'Accept': 'application/json',
+          },
+        });
         if (!response.ok) throw new Error('Erreur lors de la récupération des types de formation');
         const data = await response.json();
         setTrainingTypes(data.data || data);
@@ -258,6 +270,9 @@ export default function InscriptionForm() {
     try {
       const response = await fetch(`${API_BASE_URL}/students/register`, {
         method: 'POST',
+        headers: {
+          'X-API-Key': API_KEY,
+        },
         body: formData,
       });
 
