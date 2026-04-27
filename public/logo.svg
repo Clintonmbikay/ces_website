@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" fill="none">
+  <!-- Circle with CES -->
+  <circle cx="60" cy="60" r="55" fill="none" stroke="#DC2626" stroke-width="6"/>
+  <text x="60" y="75" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#DC2626" text-anchor="middle">CES</text>
+  
+  <!-- CAR EXPRESS SERVICES -->
+  <text x="135" y="55" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#DC2626">CAR EXPRESS SERVICES</text>
+  
+  <!-- CES SONT LES DETAILS QUI FONT LA DIFFERENCE -->
+  <text x="135" y="85" font-family="Arial, sans-serif" font-size="13" fill="#DC2626">CES SONT LES DÉTAILS QUI FONT LA DIFFÉRENCE</text>
+</svg>
