@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Car, Building2, GraduationCap, Briefcase, ArrowRight, Star, ShieldCheck, Award, Phone } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import CloudinaryImage from '../components/CloudinaryImage';
 
 const services = [
   {
@@ -11,7 +12,7 @@ const services = [
     description:
       'Une vaste gamme de véhicules de qualité — du compact pour le quotidien aux 4x4 imposants pour vos déplacements professionnels.',
     href: '/vehicules',
-    image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/du4gu9q4b/image/upload/q_auto/f_auto/v1777363282/mohammad-samir-g30Lva74rhI-unsplash_d9mjre.jpg',
   },
   {
     icon: Building2,
@@ -27,7 +28,7 @@ const services = [
     description:
       'Apprenez à conduire avec des professionnels. 3 formations adaptées à votre rythme et votre budget.',
     href: '/auto-ecole',
-    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/du4gu9q4b/image/upload/q_auto/f_auto/v1777363775/pexels-didsss-5556560_lf05vt.jpg',
   },
   {
     icon: Briefcase,
@@ -35,7 +36,7 @@ const services = [
     description:
       "Plus de 20 ans d'expertise dans le placement de chauffeurs, mécaniciens et agents administratifs qualifiés.",
     href: '/carrieres',
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/du4gu9q4b/image/upload/q_auto/f_auto/v1777364084/pexels-jep-gambardella-7689739_qytyz1.jpg',
   },
 ];
 
@@ -160,13 +161,15 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative bg-[#0B1E3F] overflow-hidden">
-        <div
-          className="absolute top-0 right-0 w-full lg:w-[55%] h-full bg-cover bg-center opacity-40 lg:opacity-55"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, #0B1E3F 0%, transparent 60%), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&auto=format&fit=crop')",
-          }}
-        />
+        <div className="absolute top-0 right-0 w-full lg:w-[55%] h-full opacity-40 lg:opacity-55">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1E3F] via-[#0B1E3F]/40 to-transparent" />
+          <CloudinaryImage 
+            publicId="ChatGPT_Image_28_avr._2026_08_58_59_uzkoyp"
+            width={1400}
+            height={900}
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute top-16 right-8 lg:right-20 w-44 h-1 bg-[#DC2626] hidden md:block" />
         <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
           <HeroAnimation className="max-w-[600px]">
